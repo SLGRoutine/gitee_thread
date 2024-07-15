@@ -6,7 +6,7 @@ import java.util.Date;
  * @author SLGRoutine
  * @date 2024/7/14
  */
-public class daemonThread {
+public class Test10_daemonThread {
     public static void main(String[] args) {
         Thread thread = new Thread(()->{
             while (true){

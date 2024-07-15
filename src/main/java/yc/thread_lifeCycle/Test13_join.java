@@ -7,7 +7,7 @@ package yc.thread_lifeCycle;
  * @author SLGRoutine
  * @date 2024/7/14
  */
-public class join {
+public class Test13_join {
     public static void main(String[] args) throws InterruptedException {
         LifeCirele lc = new LifeCirele();
         System.out.println(lc.isAlive());//线程状态值

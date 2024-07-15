@@ -5,7 +5,7 @@ package yc.thread_lifeCycle;
  * @author SLGRoutine
  * @date 2024/7/14
  */
-public class yield_sleep {
+public class Test12_yield_sleep {
     public static void main(String[] args) {
         MyTask task1 = new MyTask();
         MyTask task2 = new MyTask();

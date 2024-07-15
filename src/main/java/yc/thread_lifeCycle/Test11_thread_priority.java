@@ -6,7 +6,7 @@ package yc.thread_lifeCycle;
  * @author SLGRoutine
  * @date 2024/7/14
  */
-public class thread_priority {
+public class Test11_thread_priority {
     public static void main(String[] args) {
         // 创建三个线程，分别设置不同的优先级
         Thread thread1 = new Thread(new WorkerThread(), "Thread 1");

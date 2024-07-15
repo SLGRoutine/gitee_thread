@@ -13,14 +13,14 @@ public class Test5_pool {
     public static void main(String[] args) {
         /*核心线程池带的大小*/
         int corePoolSize = 3;
-        /*线程池的最大线程数量*/
+        /*线程池的最大线程数量，这个参数决定了线程池创建的线程个数*/
         int maxPoolSize =5;
         /*线程最大空闲时间*/
         long keepAliveTime = 10;
         /*时间单位*/
         TimeUnit unit = TimeUnit.SECONDS; //enum枚举  常量
         /*阻塞队列  容量为2  最多允许放入两个空闲线程  */
-        BlockingQueue<Runnable> workQueue = new ArrayBlockingQueue<>(2); //现在同时最多允许有七个线程执行，多余的会被拒绝执行
+        BlockingQueue<Runnable> workQueue = new ArrayBlockingQueue<>(2); //五个正在执行的任务 ，三个等待执行的任务
         /*创建线程工厂*/
         ThreadFactory threadFactory = new NameThreadFactory();
         /*线程拒绝策略*/
@@ -38,12 +38,14 @@ public class Test5_pool {
             int count = 10;
             for (int i = 1;i<=count;i++){
                 Task task = new Task(String.valueOf(i));
-                executor.submit(task);//向线程池中提交10个线程
+                executor.submit(task);//向线程池中提交10个任务
             }
         }finally {
             assert executor!=null;//断言 可开  -ea -da
             executor.shutdown();//关闭线程池
         }
+
+        System.out.println("因为线程池最大线程数量为5，所以只会创建5个线程对象");
     }
 
     /**

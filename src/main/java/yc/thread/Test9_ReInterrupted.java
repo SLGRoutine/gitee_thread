@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
+ * 中断开关的写法
  * @author SLGRoutine
  * @date 2024/7/14
  */
